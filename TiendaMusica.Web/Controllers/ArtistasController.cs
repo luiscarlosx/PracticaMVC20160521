@@ -15,9 +15,7 @@ namespace TiendaMusica.Web.Controllers
         }
         public ActionResult Albums(string artista)
         {
-            /// viene el codigo
-            /// Logica de Negocio no va en un controlador
-            /// 
+            
             IEnumerable<AlbumsPorArtistaViewModel> albums = 
                                                         tienda.Albums(artista);
 
