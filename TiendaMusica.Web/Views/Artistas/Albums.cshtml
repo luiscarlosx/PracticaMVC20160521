@@ -29,11 +29,29 @@
             @Html.DisplayFor(modelItem => item.Album)
         </td>
         <td>
-            @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+
+            
+
+            @{
+                string strcampoAlbum = item.Album;
+                strcampoAlbum = strcampoAlbum + ".mp3";
+                string strRutaAudio = Path.Combine( Server.MapPath(@"~\Audio\"),strcampoAlbum) ;
+
+                if (File.Exists(strRutaAudio)) {
+                <audio controls src="..\..\Audio\@strcampoAlbum">
+                    <p>Tu navegador no implementa el elemento audio.</p>
+                </audio>
+                }
+
+                }
+
+               
+            
+
         </td>
     </tr>
-}
+                }
 
 </table>
+
+
